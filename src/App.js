@@ -1,16 +1,21 @@
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-import Topics from "./components/Topics";
-
+import Home from "./components/pages/Home";
+import Articles from "./components/pages/Articles";
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Nav />
-      <Topics />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/articles">
+            <Articles />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
