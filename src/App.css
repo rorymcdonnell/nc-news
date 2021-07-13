@@ -1,3 +1,9 @@
 .App {
   text-align: center;
 }
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
