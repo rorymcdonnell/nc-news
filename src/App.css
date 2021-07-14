@@ -7,3 +7,39 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+.home-page-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "latest-news coding cooking football"
+    "latest-news . . ."
+    "latest-news . . .";
+}
+.latest-news {
+  grid-area: latest-news;
+  background-color: aquamarine;
+}
+.coding-img {
+  width: 100%;
+  grid-area: coding;
+}
+.cooking-img {
+  width: 100%;
+
+  grid-area: cooking;
+}
+.football-img {
+  width: 100%;
+
+  grid-area: football;
+}
+
+.banner {
+  border: solid 2px #64aebf;
+  padding: 5px;
+  margin-bottom: 2px;
+}
+.article {
+  list-style: none;
+}

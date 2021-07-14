@@ -18,11 +18,11 @@ const Header = () => {
           <Link to="/topics/coding">
             <h4>coding</h4>
           </Link>
-          <Link to="/topics/football">
-            <h4>football</h4>
-          </Link>
           <Link to="/topics/cooking">
             <h4>cooking</h4>
+          </Link>
+          <Link to="/topics/football">
+            <h4>football</h4>
           </Link>
         </div>
       </nav>

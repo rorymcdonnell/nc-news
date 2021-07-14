@@ -6,20 +6,16 @@ import {
   useParams,
 } from "react-router-dom";
 import Articles from "./Articles";
-// import { fetchTopicBySlug } from "../../utils/api";
+import codingImg from "../../images/coding.jpg";
+import cookingImg from "../../images/cooking.jpg";
+import footballImg from "../../images/football.jpg";
 
 const SingleTopic = () => {
-  const [topic, setTopic] = useState({});
   const { topic_slug } = useParams();
-
-  // useEffect(() => {
-  //   fetchTopicBySlug(topic_slug).then((topicData) => {
-  //     setTopic(topicData);
-  //   });
-  // }, [topic_slug]);
 
   return (
     <div>
+      <img src={`${topic_slug}Img`} alt={`${topic_slug}-cover`}></img>
       <h2> {topic_slug}</h2>
       <Articles />
     </div>

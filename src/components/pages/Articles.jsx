@@ -39,10 +39,11 @@ const Articles = () => {
               number_of_comments,
             }) => {
               return (
-                <li key={article_id}>
+                <li className="article" key={article_id}>
                   <h2>{title}</h2>
                   <h3>{topic}</h3>
-                  <p>{body}</p>
+                  <button>Read Article</button>
+                  <p className="article-body">{body}</p>
                   <p>{author}</p>
                   <p>{number_of_comments}</p>
                 </li>
@@ -75,12 +76,14 @@ const Articles = () => {
               number_of_comments,
             }) => {
               return (
-                <li key={article_id}>
+                <li className="article" key={article_id}>
                   <h2>{title}</h2>
                   <h3>{topic}</h3>
-                  <p>{body}</p>
-                  <p>{author}</p>
-                  <p>{number_of_comments}</p>
+                  <Test>
+                    <p className="article-body">{body}</p>
+                    <p>{author}</p>
+                    <p>{number_of_comments}</p>
+                  </Test>
                 </li>
               );
             }
@@ -88,6 +91,33 @@ const Articles = () => {
       </ul>
     </div>
   );
+};
+
+const Test = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleIsOpen = () => {
+    setIsOpen((currOpen) => !currOpen);
+  };
+
+  if (isOpen === true) {
+    return (
+      <div>
+        <button onClick={toggleIsOpen}>
+          {isOpen ? "Close Article" : "Read Article"}
+        </button>
+        {children}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <button onClick={toggleIsOpen}>
+          {isOpen ? "Close Article" : "Read Article"}{" "}
+        </button>
+      </div>
+    );
+  }
 };
 
 export default Articles;
