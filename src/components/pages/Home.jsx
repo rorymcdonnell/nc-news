@@ -4,6 +4,7 @@ import codingImg from "../../images/coding.png";
 import cookingImg from "../../images/cooking.png";
 import footballImg from "../../images/football.png";
 import { Link } from "react-router-dom";
+import Footer from "../../components/common/Footer";
 
 const Home = () => {
   return (
@@ -47,6 +48,7 @@ const Home = () => {
           </div>
         </Link>
       </div>
+      <Footer />
     </div>
   );
 };

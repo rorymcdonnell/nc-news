@@ -42,10 +42,7 @@
 .article {
   list-style: none;
 }
-.coding-img-cover {
-  width: 100%;
-  height: 20%;
-}
+
 .container {
   position: relative;
 }
@@ -54,4 +51,38 @@
   top: 30%;
   left: 40%;
   color: white;
+}
+
+/* CSS grid layour for single topic
+coding-img-cover
+articles-section
+latest-news
+single-topic
+*/
+
+.single-topic {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "image articles-section"
+    "latest-news articles-section"
+    ". articles-section";
+}
+
+.coding-img-cover {
+  grid-area: image;
+  width: 100%;
+}
+.latest-news-topic {
+  grid-area: latest-news;
+  background-color: #64aebf;
+  color: white;
+}
+.articles-section {
+  grid-area: articles-section;
+}
+.default-user-img {
+  width: 2rem;
+  border-radius: 50px;
 }

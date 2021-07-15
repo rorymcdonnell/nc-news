@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo-nc-news.png";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/User";
 
 const Header = () => {
+  const { userLoggedIn } = useContext(UserContext);
+
   return (
     <div>
       <nav>
@@ -23,6 +27,14 @@ const Header = () => {
           </Link>
           <Link to="/topics/football">
             <h4>Football</h4>
+          </Link>
+          <Link>
+            <span>{userLoggedIn.username}</span>
+            <img
+              className="default-user-img"
+              src={userLoggedIn.avatar_url}
+              alt="user-img"
+            ></img>
           </Link>
         </div>
       </nav>
