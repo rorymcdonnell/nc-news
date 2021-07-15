@@ -14,9 +14,7 @@ export const getAllArticles = async () => {
   return data.articles;
 };
 
-// export const fetchTopicBySlug = (topic_slug) => {
-//   return newsApi.get(`/topics/${topic_slug}`).then((res) => {
-//     console.log(res);
-//     return res.data.topic;
-//   });
-// };
+export const getAllUsers = async () => {
+  const { data } = await newsApi.get("/users");
+  return data;
+};

@@ -4,6 +4,8 @@ import Home from "./components/pages/Home";
 import Articles from "./components/pages/Articles";
 import Header from "./components/common/Header";
 import SingleTopic from "./components/pages/SingleTopic";
+import { UserContext } from "./contexts/User";
+
 function App() {
   return (
     <Router>
