@@ -16,7 +16,7 @@ export const getAllArticles = async () => {
 
 export const getArticleById = async (article_id) => {
   const { data } = await newsApi.get(`/articles/${article_id}`);
-  return data.articles;
+  return data.article;
 };
 
 export const getAllUsers = async () => {
@@ -25,11 +25,9 @@ export const getAllUsers = async () => {
 };
 
 export const getArticleComments = async (article_id) => {
-  const { data } = await newsApi
-    .get(`/articles/${article_id}/comments`)
-    .catch((err) => {
-      return err.response;
-    });
+  const { data } = await newsApi.get(`/${article_id}/comments`).catch((err) => {
+    return err.response;
+  });
   return data.comments;
 };
 

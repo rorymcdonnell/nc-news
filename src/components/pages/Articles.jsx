@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllArticles } from "../../utils/api";
 import { useParams } from "react-router-dom";
-import Comments from "../common/Comments";
+// import Comments from "../common/Comments";
 import Expandable from "../common/Expandable";
 
 const Articles = () => {
