@@ -14,7 +14,7 @@ const Expandable = ({ children, article_id }) => {
         <button onClick={toggleIsOpen}>
           {isOpen ? "Close Preview" : "Preview Article"}
         </button>
-        <Link to="/topics/coding">
+        <Link to={`/articles/${article_id}`}>
           <button>View Full Article</button>
         </Link>
         {children}
@@ -26,7 +26,8 @@ const Expandable = ({ children, article_id }) => {
         <button onClick={toggleIsOpen}>
           {isOpen ? "Close Preview" : "Preview Article"}{" "}
         </button>
-        <Link to="/articles/coding">
+
+        <Link to={`/articles/${article_id}`}>
           <button>View Full Article</button>
         </Link>
         <h1>{article_id}</h1>
