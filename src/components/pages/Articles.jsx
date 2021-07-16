@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getAllArticles } from "../../utils/api";
 import { useParams } from "react-router-dom";
+import Comments from "../common/Comments";
+import Expandable from "../common/Expandable";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -41,11 +43,10 @@ const Articles = () => {
               return (
                 <li className="article" key={article_id}>
                   <h2>{title}</h2>
-                  <h3>{topic}</h3>
                   <button>Read Article</button>
-                  <p className="article-body">{body}</p>
-                  <p>{author}</p>
-                  <p>{number_of_comments}</p>
+                  <p className="article-body">{body.substring(0, 100)}...</p>
+                  <p>Written By: {author}</p>
+                  <p>Comments: {number_of_comments}</p>
                 </li>
               );
             }
@@ -78,12 +79,11 @@ const Articles = () => {
               return (
                 <li className="article" key={article_id}>
                   <h2>{title}</h2>
-                  <h3>{topic}</h3>
-                  <Test>
-                    <p className="article-body">{body}</p>
-                    <p>{author}</p>
-                    <p>{number_of_comments}</p>
-                  </Test>
+                  <Expandable article_id={article_id}>
+                    <p className="article-body">{body.substring(0, 100)}...</p>
+                    <p>Written By: {author}</p>
+                    <p>Comments: {number_of_comments}</p>
+                  </Expandable>
                 </li>
               );
             }
@@ -91,33 +91,6 @@ const Articles = () => {
       </ul>
     </div>
   );
-};
-
-const Test = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleIsOpen = () => {
-    setIsOpen((currOpen) => !currOpen);
-  };
-
-  if (isOpen === true) {
-    return (
-      <div>
-        <button onClick={toggleIsOpen}>
-          {isOpen ? "Close Article" : "Read Article"}
-        </button>
-        {children}
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <button onClick={toggleIsOpen}>
-          {isOpen ? "Close Article" : "Read Article"}{" "}
-        </button>
-      </div>
-    );
-  }
 };
 
 export default Articles;

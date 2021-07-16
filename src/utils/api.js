@@ -14,6 +14,11 @@ export const getAllArticles = async () => {
   return data.articles;
 };
 
+export const getArticleById = async (article_id) => {
+  const { data } = await newsApi.get(`/articles/${article_id}`);
+  return data.articles;
+};
+
 export const getAllUsers = async () => {
   const { data } = await newsApi.get("/users");
   return data;

@@ -7,6 +7,7 @@ import Header from "./components/common/Header";
 import SingleTopic from "./components/pages/SingleTopic";
 import { UserContext } from "./contexts/User";
 import defaultUserImg from "./images/rory-user.JPG";
+import SingleArticle from "./components/pages/SingleArticle";
 
 function App() {
   const [userLoggedIn, setUserLoggedIn] = useState({
@@ -27,6 +28,10 @@ function App() {
             <Route path="/topics/:topic_slug">
               <Header />
               <SingleTopic />
+            </Route>
+            <Route path="/articles/:article_id">
+              <Header />
+              <SingleArticle />
             </Route>
             <Route path="/">
               <Home />

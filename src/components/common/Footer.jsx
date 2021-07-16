@@ -10,6 +10,7 @@ const Footer = () => {
         <li>Contact</li>
         <li>About</li>
         <li>Social Media</li>
+        <h3>{topic_slug}</h3>
       </ul>
     </div>
   );
