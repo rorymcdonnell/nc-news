@@ -12,33 +12,45 @@ const SingleTopic = () => {
   if (topic_slug === "coding") {
     return (
       <div className="single-topic">
-        <h2 className="topic-slug"> {topic_slug}</h2>
         <img
-          className="coding-img-cover"
+          className="topic-img-cover"
           src={codingImg}
           alt={`${topic_slug}-cover`}
         ></img>
         <div className="latest-news-topic">
           <h3>Latest News</h3>
         </div>
-        <Footer />
+
         <Articles />
+        <Footer />
       </div>
     );
   } else if (topic_slug === "cooking") {
     return (
-      <div>
-        <img src={cookingImg} alt={`${topic_slug}-cover`}></img>
-        <h2> {topic_slug}</h2>
-        <Footer />
+      <div className="single-topic">
+        <img
+          className="topic-img-cover"
+          src={cookingImg}
+          alt={`${topic_slug}-cover`}
+        ></img>
+        <div className="latest-news-topic">
+          <h3>Latest News</h3>
+        </div>
         <Articles />
+        <Footer />
       </div>
     );
   } else if (topic_slug === "football") {
     return (
-      <div>
-        <img src={footballImg} alt={`${topic_slug}-cover`}></img>
-        <h2> {topic_slug}</h2>
+      <div className="single-topic">
+        <img
+          className="topic-img-cover"
+          src={footballImg}
+          alt={`${topic_slug}-cover`}
+        ></img>
+        <div className="latest-news-topic">
+          <h3>Latest News</h3>
+        </div>
         <Articles />
         <Footer />
       </div>

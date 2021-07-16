@@ -62,15 +62,16 @@ single-topic
 
 .single-topic {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 33% 66%;
+  grid-template-rows: masonry;
   grid-template-areas:
-    "image articles-section"
+    "image articles-section "
     "latest-news articles-section"
-    ". articles-section";
+    ". articles-section"
+    "footer footer ";
 }
 
-.coding-img-cover {
+.topic-img-cover {
   grid-area: image;
   width: 100%;
 }
@@ -85,4 +86,13 @@ single-topic
 .default-user-img {
   width: 2rem;
   border-radius: 50px;
+}
+.footer {
+  grid-area: footer;
+  padding: 50px;
+  background-color: #64aebf;
+  color: white;
+}
+.footer > ul > li {
+  list-style: none;
 }

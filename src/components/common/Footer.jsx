@@ -5,13 +5,12 @@ const Footer = () => {
   const { topic_slug } = useParams();
 
   return (
-    <div>
+    <div className="footer">
       <ul>
         <li>Contact</li>
         <li>About</li>
         <li>Social Media</li>
       </ul>
-      <h2>{topic_slug}</h2>
     </div>
   );
 };
