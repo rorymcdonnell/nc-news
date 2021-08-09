@@ -28,7 +28,8 @@ const Header = () => {
           <Link to="/topics/football">
             <h4>Football</h4>
           </Link>
-          <Link>
+          {/* HERE IS THE PROPS ERROR */}
+          <Link to="/topics/coding">
             <span>{userLoggedIn.username}</span>
             <img
               className="default-user-img"

@@ -11,7 +11,6 @@ const SingleArticle = () => {
   useEffect(() => {
     getArticleById(article_id).then((articleFromApi) => {
       setArticle(articleFromApi);
-      console.log(articleFromApi);
     });
     setIsLoading(false);
   }, [article_id]);

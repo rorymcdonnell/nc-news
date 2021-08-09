@@ -8,21 +8,24 @@ import SingleTopic from "./components/pages/SingleTopic";
 import { UserContext } from "./contexts/User";
 import defaultUserImg from "./images/rory-user.JPG";
 import SingleArticle from "./components/pages/SingleArticle";
+import Users from "./components/pages/Users";
 
 function App() {
-  const [userLoggedIn, setUserLoggedIn] = useState({
+  const defaultUser = {
     username: "rorymcdonnell95",
     avatar_url: defaultUserImg,
     name: "Rory",
-  });
+  };
+
+  const [userLoggedIn, setUserLoggedIn] = useState(defaultUser);
 
   return (
     <Router>
       <UserContext.Provider value={{ userLoggedIn, setUserLoggedIn }}>
         <div className="App">
           <Switch>
-            <Route path="/topics/all">
-              <Header />
+            <Route exact path="/topics/all">
+              <Header defaultUser={defaultUser} />
               <Articles />
             </Route>
             <Route path="/topics/:topic_slug">
@@ -33,7 +36,10 @@ function App() {
               <Header />
               <SingleArticle />
             </Route>
-            <Route path="/">
+            <Route exact path="/users">
+              <Users />
+            </Route>
+            <Route exact path="/">
               <Home />
             </Route>
           </Switch>

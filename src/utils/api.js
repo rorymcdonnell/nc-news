@@ -10,7 +10,7 @@ export const getAllTopics = async () => {
 };
 
 export const getAllArticles = async () => {
-  const { data } = await newsApi.get("/articles");
+  const { data } = await newsApi.get(`/articles`);
   return data.articles;
 };
 
@@ -21,7 +21,14 @@ export const getArticleById = async (article_id) => {
 
 export const getAllUsers = async () => {
   const { data } = await newsApi.get("/users");
-  return data;
+  return data.users;
+};
+
+export const getLoggedInUser = async (username) => {
+  const { data } = await newsApi.get(`/${username}`).catch((err) => {
+    return err.response;
+  });
+  return data.user;
 };
 
 export const getArticleComments = async (article_id) => {
@@ -36,4 +43,13 @@ export const getAllComments = async () => {
     return err.response;
   });
   return data;
+};
+
+export const postComment = async (article_id, itemBody) => {
+  const { reply } = await newsApi
+    .post(`/articles/${article_id}/comments`, itemBody)
+    .catch((err) => {
+      return err.response;
+    });
+  return reply;
 };
