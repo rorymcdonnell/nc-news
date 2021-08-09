@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo-nc-news.png";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/User";
+import Navbar from "./Navbar";
 
 const Header = () => {
   const { userLoggedIn } = useContext(UserContext);
@@ -15,7 +16,7 @@ const Header = () => {
             <img className="logo-img" src={logo} alt="logo"></img>
           </Link>
         </div>
-        <div className="navbar">
+        <div className="navebar">
           <Link to="/topics/all">
             <h4>All Articles</h4>
           </Link>
@@ -28,7 +29,6 @@ const Header = () => {
           <Link to="/topics/football">
             <h4>Football</h4>
           </Link>
-          {/* HERE IS THE PROPS ERROR */}
           <Link to="/topics/coding">
             <span>{userLoggedIn.username}</span>
             <img
@@ -38,6 +38,7 @@ const Header = () => {
             ></img>
           </Link>
         </div>
+        <Navbar />
       </nav>
     </div>
   );

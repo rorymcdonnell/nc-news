@@ -4,11 +4,12 @@ import { useState } from "react";
 import Home from "./components/pages/Home";
 import Articles from "./components/pages/Articles";
 import Header from "./components/common/Header";
-import SingleTopic from "./components/pages/SingleTopic";
+import SingleTopics from "./components/pages/SingleTopics";
 import { UserContext } from "./contexts/User";
 import defaultUserImg from "./images/rory-user.JPG";
 import SingleArticle from "./components/pages/SingleArticle";
 import Users from "./components/pages/Users";
+import Navbar from "./components/common/Navbar";
 
 function App() {
   const defaultUser = {
@@ -26,11 +27,12 @@ function App() {
           <Switch>
             <Route exact path="/topics/all">
               <Header defaultUser={defaultUser} />
+              <Navbar />
               <Articles />
             </Route>
             <Route path="/topics/:topic_slug">
               <Header />
-              <SingleTopic />
+              <SingleTopics />
             </Route>
             <Route path="/articles/:article_id">
               <Header />

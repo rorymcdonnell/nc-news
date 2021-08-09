@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllArticles, getAllTopics } from "../../utils/api";
 import { useParams, Link } from "react-router-dom";
-import Expandable from "../common/Expandable";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -74,28 +73,6 @@ const Articles = () => {
         })}
       </select>
       <div className="articles-section">
-        {/* <ul>
-          {articles.map(
-            ({
-              article_id,
-              title,
-              body,
-              topic,
-              author,
-              number_of_comments,
-            }) => {
-              return (
-                <li className="article" key={article_id}>
-                  <h2>{title}</h2>
-                  <button>Read Article</button>
-                  <p className="article-body">{body.substring(0, 100)}...</p>
-                  <p>Written By: {author}</p>
-                  <p>Comments: {number_of_comments}</p>
-                </li>
-              );
-            }
-          )}
-        </ul> */}
         <ul className="all-articles">{filterResults()}</ul>
       </div>
     </div>

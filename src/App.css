@@ -2,13 +2,30 @@
   text-align: center;
 }
 
-@media screen and (min-width: 425px) {
-  .navbar {
+.navebar {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 768px) {
+  .navebar {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
+  .toggle-button {
+    display: none;
+  }
+
+  .toggle-button span {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 425px) {
   .home-page-section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -61,26 +78,32 @@ articles-section
 latest-news
 single-topic
 */
-
-  .single-topic {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-template-rows: masonry;
-    grid-template-areas:
-      "image articles-section"
-      "latest-news articles-section"
-      ". articles-section"
-      "footer footer ";
-  }
-
+  /* Size of img when mobile view is in place */
   .topic-img-cover {
-    grid-area: image;
-    width: 100%;
+    width: 75%;
   }
-  .latest-news-topic {
-    grid-area: latest-news;
-    background-color: #64aebf;
-    color: white;
+
+  @media only screen and (min-width: 768px) {
+    .single-topic {
+      display: grid;
+      grid-template-columns: 33% 66%;
+      grid-template-rows: masonry;
+      grid-template-areas:
+        "image articles-section "
+        "latest-news articles-section"
+        ". articles-section"
+        "footer footer ";
+    }
+
+    .topic-img-cover {
+      grid-area: image;
+      width: 75%;
+    }
+    .latest-news-topic {
+      grid-area: latest-news;
+      background-color: #64aebf;
+      color: white;
+    }
   }
   .articles-section {
     grid-area: articles-section;
@@ -118,4 +141,59 @@ single-topic
 .single-header {
   color: white;
   text-decoration: underline;
+}
+
+.single-topic-heading {
+  text-transform: capitalize;
+}
+
+/* navbar css */
+.navbar {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  background: #eeefee;
+  top: 150px;
+  left: -210px;
+  transition: 0.4s;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-decoration: none;
+  color: black;
+  z-index: 10;
+}
+
+.navbar > ul > li > a {
+  color: #3ab39d;
+  text-align: center;
+  position: relative;
+  right: 60px;
+}
+
+.navbar.active {
+  left: 0px;
+  z-index: 1000;
+}
+
+.navbar ul li {
+  list-style: none;
+  color: black;
+  font-size: 20px;
+  padding: 20px 30px;
+  font-style: normal;
+  margin: 0;
+  width: 20px;
+}
+.toggle-button {
+  position: relative;
+  left: 140px;
+  font-size: 2.7rem;
+  color: black;
+}
+
+.toggle-button span {
+  width: 45px;
+  height: 45px;
+  background-color: black;
+  display: block;
 }
