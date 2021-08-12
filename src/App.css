@@ -9,7 +9,52 @@
   justify-content: space-evenly;
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  /* Styling for each article preview */
+  .article-preview-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "image text"
+      "image text";
+  }
+  .text-for-article {
+    grid-area: text;
+  }
+  .article-photo {
+    max-width: 100%;
+    grid-area: image;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    border-radius: 15px;
+  }
+  .single-header {
+    color: white;
+    text-decoration: underline;
+    font-size: 16px;
+  }
+  .single-topic {
+    display: grid;
+    grid-template-columns: 33% 66%;
+    grid-template-rows: masonry;
+    grid-template-areas:
+      "image articles-section "
+      "latest-news articles-section"
+      ". articles-section"
+      "footer footer ";
+  }
+
+  .topic-img-cover {
+    grid-area: image;
+    width: 100%;
+  }
+  .latest-news-topic {
+    grid-area: latest-news;
+    background-color: #64aebf;
+    color: white;
+  }
   .navebar {
     display: flex;
     flex-direction: row;
@@ -23,9 +68,6 @@
   .toggle-button span {
     display: none;
   }
-}
-
-@media screen and (min-width: 425px) {
   .home-page-section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -72,39 +114,8 @@
     color: white;
   }
 
-  /* CSS grid layour for single topic
-coding-img-cover
-articles-section
-latest-news
-single-topic
-*/
   /* Size of img when mobile view is in place */
-  .topic-img-cover {
-    width: 75%;
-  }
 
-  @media only screen and (min-width: 768px) {
-    .single-topic {
-      display: grid;
-      grid-template-columns: 33% 66%;
-      grid-template-rows: masonry;
-      grid-template-areas:
-        "image articles-section "
-        "latest-news articles-section"
-        ". articles-section"
-        "footer footer ";
-    }
-
-    .topic-img-cover {
-      grid-area: image;
-      width: 75%;
-    }
-    .latest-news-topic {
-      grid-area: latest-news;
-      background-color: #64aebf;
-      color: white;
-    }
-  }
   .articles-section {
     grid-area: articles-section;
   }
@@ -137,14 +148,6 @@ single-topic
   background-color: #64aebf;
   color: white;
   border-radius: 15px;
-}
-.single-header {
-  color: white;
-  text-decoration: underline;
-}
-
-.single-topic-heading {
-  text-transform: capitalize;
 }
 
 /* navbar css */
@@ -189,6 +192,7 @@ single-topic
   left: 140px;
   font-size: 2.7rem;
   color: black;
+  top: -30px;
 }
 
 .toggle-button span {
@@ -196,4 +200,55 @@ single-topic
   height: 45px;
   background-color: black;
   display: block;
+}
+
+/* making the title banner look nice */
+.topic-container {
+  position: relative;
+  /* text-align: center; */
+}
+.topic-img-cover {
+  width: 100%;
+}
+.single-topic-heading {
+  text-transform: capitalize;
+  color: white;
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Styling for each article preview */
+.article-preview-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "image text"
+    "image text";
+}
+.text-for-article {
+  grid-area: text;
+}
+.single-header {
+  color: white;
+  text-decoration: underline;
+  font-size: 16px;
+}
+.article-photo {
+  max-width: 75%;
+  grid-area: image;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.comment-count {
+  color: white;
+  text-decoration: underline white;
 }
