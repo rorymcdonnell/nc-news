@@ -37,7 +37,6 @@ const Articles = () => {
       (article) => articleFilter === article.topic || articleFilter === "all"
     );
     return filteredArticles.map((article) => {
-      console.log(article);
       return (
         <li key={article.article_id} className="single-article">
           <div className="article-preview-container">

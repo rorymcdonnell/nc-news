@@ -22,7 +22,6 @@ const LatestNews = () => {
       (article) => articleFilter === topic_slug || articleFilter === "all"
     );
     return filteredArticles.map((article) => {
-      console.log(article);
       return (
         <li key={article.article_id} className="single-article">
           <Link to={`/articles/${article.article_id}`}>
