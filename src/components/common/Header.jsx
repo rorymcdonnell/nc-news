@@ -21,10 +21,9 @@ const Header = () => {
               src={userLoggedIn.avatar_url}
               alt="user-img"
             ></img>
-            <span>
-              Change User
-              <Link to="/users"></Link>
-            </span>
+            <Link to="/users">
+              <span>Change User</span>
+            </Link>
           </Link>
         </div>
         <div className="navebar">
