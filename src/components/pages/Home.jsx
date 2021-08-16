@@ -1,9 +1,5 @@
 import React from "react";
 import Header from "../common/Header";
-import codingImg from "../../images/coding-banner.png";
-import cookingImg from "../../images/cooking-banner.png";
-import footballImg from "../../images/football-banner.png";
-import { Link } from "react-router-dom";
 import Footer from "../../components/common/Footer";
 import Articles from "./Articles";
 

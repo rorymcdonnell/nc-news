@@ -60,17 +60,25 @@ const SingleTopics = () => {
     });
   };
 
+  if (isLoading) {
+    return (
+      <div>
+        <h1>LOADING...</h1>
+      </div>
+    );
+  }
+
   if (topic_slug === "coding") {
     return (
       <div>
         <div className="topic-container">
+          <h1 className="single-topic-heading">{topic_slug}</h1>
           <img
             className="topic-img-cover"
             src={codingImg}
             alt={topic_slug}
           ></img>
         </div>
-        <h1 className="single-topic-heading">{topic_slug}</h1>
         <ul className="all-articles">{filterResults()}</ul>
         <Footer />
       </div>

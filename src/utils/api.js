@@ -25,16 +25,18 @@ export const getAllUsers = async () => {
 };
 
 export const getLoggedInUser = async (username) => {
-  const { data } = await newsApi.get(`/${username}`).catch((err) => {
+  const { data } = await newsApi.get(`/users/${username}`).catch((err) => {
     return err.response;
   });
   return data.user;
 };
 
 export const getArticleComments = async (article_id) => {
-  const { data } = await newsApi.get(`/${article_id}/comments`).catch((err) => {
-    return err.response;
-  });
+  const { data } = await newsApi
+    .get(`articles/${article_id}/comments`)
+    .catch((err) => {
+      return err.response;
+    });
   return data.comments;
 };
 

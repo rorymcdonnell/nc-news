@@ -51,16 +51,21 @@ const Users = () => {
             >
               <div>
                 <p>{user.username}</p>
+                <img
+                  className="user-image"
+                  src={user.avatar_url}
+                  alt={user}
+                ></img>
+                <button>Login</button>
                 {user.username === userLoggedIn.username
                   ? [
                       <h3>Logged in</h3>,
                       <Link to="/">
-                        <button>Back to home screen</button>
+                        <button>Home</button>
                       </Link>,
                       <Link to="/">
-                        <button>Manage my comments</button>
+                        <button>My comments</button>
                       </Link>,
-                      <p> </p>,
                     ]
                   : null}
               </div>

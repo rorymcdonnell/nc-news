@@ -9,7 +9,6 @@ import { UserContext } from "./contexts/User";
 import defaultUserImg from "./images/rory-user.JPG";
 import SingleArticle from "./components/pages/SingleArticle";
 import Users from "./components/pages/Users";
-import Navbar from "./components/common/Navbar";
 
 function App() {
   const defaultUser = {
@@ -27,7 +26,6 @@ function App() {
           <Switch>
             <Route exact path="/topics/all">
               <Header defaultUser={defaultUser} />
-              <Navbar />
               <Articles />
             </Route>
             <Route path="/topics/:topic_slug">
@@ -39,6 +37,7 @@ function App() {
               <SingleArticle />
             </Route>
             <Route exact path="/users">
+              <Header />
               <Users />
             </Route>
             <Route exact path="/">
