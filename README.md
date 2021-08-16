@@ -1,3 +1,6 @@
+# NC News App
+This is the front end site that users can use and interact with. It is connected to the backend API created previously using Node.js, express and PostgreSQL. The live version can be found here: https://rorymcdonnell-nc-news.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
