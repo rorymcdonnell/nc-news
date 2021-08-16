@@ -9,18 +9,22 @@ const Header = () => {
 
   return (
     <div>
-      <nav>
-        <div>
+      <nav className="nav-section">
+        <div className="logo-and-user">
           <Link to="/">
             <img className="logo-img" src={logo} alt="logo"></img>
           </Link>
-          <Link to="#">
+          <Link className="center-nav" to="#">
             <span>{userLoggedIn.username}</span>
             <img
               className="default-user-img"
               src={userLoggedIn.avatar_url}
               alt="user-img"
             ></img>
+            <span>
+              Change User
+              <Link to="/users"></Link>
+            </span>
           </Link>
         </div>
         <div className="navebar">
@@ -35,9 +39,6 @@ const Header = () => {
           </Link>
           <Link to="/topics/football">
             <h4>Football</h4>
-          </Link>
-          <Link to="/users">
-            <h4>Users</h4>
           </Link>
         </div>
       </nav>
