@@ -250,3 +250,13 @@
 .user-image {
   width: 5rem;
 }
+
+.footer {
+  grid-area: footer;
+  padding: 50px;
+  background-color: #64aebf;
+  color: white;
+}
+.footer > ul > li {
+  list-style: none;
+}
