@@ -8,7 +8,7 @@ const Home = () => {
     <div>
       <Header />
       <h3 className="banner">
-        BREAKING NEWS: ENGLAND LOSE ON PENALTIES AGAIN! #SOUTHGATEOUT
+        BREAKING NEWS: ENGLAND LOSE ON PENALTIES AGAIN! #SOUTHGATEOUT!
       </h3>
       <Articles />
       <Footer />
